@@ -8,13 +8,15 @@ Simple rest API with spring boot with JWT token Authentication.
 `spring.data.mongodb.uri=mongodb://your_host/your_db` 
 
 
-#Stack
+## Stack
 - Spring Boot 3.2
 - MongoDb
+- jsonwebtokens 0.11.2
 
-#Patterns
+## Patterns
 - MVC
-- 
+- DTO
+- Service
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
