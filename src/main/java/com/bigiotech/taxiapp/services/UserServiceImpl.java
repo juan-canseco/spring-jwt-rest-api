@@ -5,12 +5,16 @@ import com.bigiotech.taxiapp.domain.exceptions.RecordNotFoundException;
 import com.bigiotech.taxiapp.domain.exceptions.UsernameAlreadyExistsException;
 import com.bigiotech.taxiapp.domain.user.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -108,6 +112,16 @@ public class UserServiceImpl implements UserService {
                 user.getProfilePicture());
 
         return userDTO;
+    }
+
+    @Override
+    public List<UserDTO> getUsers(int pageIndex, int pageSize) {
+        Page<User> usersPage = repository.findAll(PageRequest.of(pageIndex, pageSize));
+        return usersPage.get().map(this::convertUserToDTO).collect(Collectors.toList());
+    }
+
+    private UserDTO convertUserToDTO(User user) {
+        return new UserDTO(user.getId(), user.getNames(), user.getSurnames(), user.getEmail(), user.getPassword(), user.getProfilePicture());
     }
 
     @Override
