@@ -9,7 +9,8 @@ Simple rest API with spring boot with JWT token Authentication.
 - http://localhost:8081/login 
 Response :
 ``` javascript
-{   "token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqY2Fuc2VjbyIsImlhdCI6MTU5NjY1Mzk4MCwiaXNzIjoidGF4aS1hcHAiLCJleHAiOjE1OTY3NDAzODB9.M_YSmrPkFjf2lAd4b5yDbat4B_QyvodCr55WKfJtrK0",
+{   
+   "token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqY2Fuc2VjbyIsImlhdCI6MTU5NjY1Mzk4MCwiaXNzIjoidGF4aS1hcHAiLCJleHAiOjE1OTY3NDAzODB9.M_YSmrPkFjf2lAd4b5yDbat4B_QyvodCr55WKfJtrK0",
    "user":{
       "id":"5f28a18626979564c0e3a9d5",
       "names":"Juan Pablo",
@@ -17,8 +18,7 @@ Response :
       "email":"jpcr.5m4r7@outlook.com",
       "username":"jcanseco",
       "profilePicture":"Juan"
-   
-}
+   }
 }
 ```
 
