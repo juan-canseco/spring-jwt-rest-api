@@ -6,18 +6,25 @@ Simple rest API with spring boot with JWT token Authentication.
 `spring.data.mongodb.uri=mongodb://your_host/your_db` 
 
 ## Usage
-- http://localhost:8081/login <br>
 Response :
 ``` javascript
+http://your_host/login
+
+// Request Body 
+{
+ "user" : "yourusername",
+ "password": "yourPassword"
+}
+
 {   
    "token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqY2Fuc2VjbyIsImlhdCI6MTU5NjY1Mzk4MCwiaXNzIjoidGF4aS1hcHAiLCJleHAiOjE1OTY3NDAzODB9.M_YSmrPkFjf2lAd4b5yDbat4B_QyvodCr55WKfJtrK0",
    "user":{
       "id":"5f28a18626979564c0e3a9d5",
-      "names":"Juan Pablo",
-      "surnames":"Canseco Rios",
-      "email":"jpcr.5m4r7@outlook.com",
-      "username":"jcanseco",
-      "profilePicture":"Juan"
+      "names":"your names",
+      "surnames":"your_surnames",
+      "email":"your_mails@gmail.com",
+      "username":"youtuser@",
+      "profilePicture":"@pictureuti.com"
    }
 }
 ```
